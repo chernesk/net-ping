@@ -13,7 +13,7 @@ require_relative 'ping/http'
 RbConfig = Config unless Object.const_defined?(:RbConfig)
 
 begin
-  `busybox`
+  `busybox 2>#{IO::NULL}`
   RbConfig::CONFIG['busybox'] = true
 rescue Errno::ENOENT
   RbConfig::CONFIG['busybox'] = false
