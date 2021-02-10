@@ -1,9 +1,11 @@
 # net-ping
+
 A collection of classes that provide different ways to ping computers.
 
 ## Prerequisites
   * ffi
   * win32-security (MS Windows only)
+  * cap2 (MS Windows only)
   * fakeweb (test only)
   * test-unit (test only)
 

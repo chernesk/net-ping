@@ -1,6 +1,3 @@
-require 'rubygems'
-require 'rbconfig'
-
 Gem::Specification.new do |spec|
   spec.name      = 'net-ping'
   spec.version   = '2.0.8'
@@ -28,17 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('fakeweb', '>= 0')
   spec.add_development_dependency('rake', '>= 0')
   spec.add_development_dependency('pry-byebug', '>= 0')
-
-  if File::ALT_SEPARATOR
-    require 'rbconfig'
-    arch = RbConfig::CONFIG['build_os'] || 'mingw32' # JRuby
-    spec.platform = Gem::Platform.new(['universal', arch])
-    spec.platform.version = nil
-
-    # Used for icmp pings.
-    spec.add_dependency('win32-security', '>= 0.2.0')
-    spec.add_dependency('cap2', '>= 0.2.2')
-  end
 
   spec.description = <<-EOF
     The net-ping library provides a ping interface for Ruby. It includes
